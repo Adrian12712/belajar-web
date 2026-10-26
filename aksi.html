@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aksi Nyata — Jaga Pesisir</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand-logo">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2z"/></svg>
+                Jaga <span>Pesisir</span>
+            </a>
+
+            <nav class="main-nav">
+                <a href="index.html" class="nav-btn">Beranda</a>
+                <a href="artikel.html" class="nav-btn">Artikel</a>
+                <a href="edukasi.html" class="nav-btn">Edukasi</a>
+                <a href="panduan.html" class="nav-btn">Panduan</a>
+                <a href="kuis.html" class="nav-btn">Kuis</a>
+                <a href="aksi.html" class="nav-btn active">Aksi</a>
+                <a href="tentang.html" class="nav-btn">Tentang</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Hero Banner -->
+            <div class="hero-card" style="padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
+                <div class="hero-content">
+                    <span class="sdg-badge sdg-13" style="margin-bottom: 1rem;">🌊 Misi Nyata Superhero Pesisir</span>
+                    <h1 class="hero-title" style="font-size: 2.2rem;">Langkah Kecil, Dampak Besar</h1>
+                    <p class="hero-desc" style="font-size: 1rem; margin-bottom: 0;">
+                        Konservasi laut dimulai dari kebiasaan sehari-hari. Mari berkomitmen dan ambil bagian dalam menjaga kelestarian pantai Indonesia!
+                    </p>
+                </div>
+            </div>
+
+            <div class="action-layout">
+                <!-- 1. CHECKLIST AKSI HARIAN -->
+                <div class="action-card-box">
+                    <span class="section-tag">Interaktif</span>
+                    <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Checklist Kebiasaan Ramah Laut</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                        Centang poin aksi yang sudah atau siap kamu terapkan sehari-hari:
+                    </p>
+
+                    <label class="checklist-item">
+                        <input type="checkbox" checked>
+                        <span>Membawa botol minum (tumbler) dan wadah makan sendiri.</span>
+                    </label>
+
+                    <label class="checklist-item">
+                        <input type="checkbox">
+                        <span>Menolak penggunaan sedotan dan kantong plastik sekali pakai.</span>
+                    </label>
+
+                    <label class="checklist-item">
+                        <input type="checkbox">
+                        <span>Memilah sampah organik dan anorganik dari rumah.</span>
+                    </label>
+
+                    <label class="checklist-item">
+                        <input type="checkbox">
+                        <span>Mengikuti kegiatan pembersihan pantai (Beach Clean-Up) lokal.</span>
+                    </label>
+
+                    <label class="checklist-item">
+                        <input type="checkbox">
+                        <span>Tidak membeli cinderamata berbahan biota laut (cangkang penyu/karang).</span>
+                    </label>
+                </div>
+
+                <!-- 2. FORM JANJI & KOMITMEN -->
+                <div class="action-card-box">
+                    <span class="section-tag">Komitmen</span>
+                    <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Form Janji Jaga Pesisir</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+                        Tuliskan janji pribadimu untuk mendukung kelestarian laut:
+                    </p>
+
+                    <!-- Hidden Trigger Saklar CSS untuk Notifikasi Sukses -->
+                    <input type="checkbox" id="pledge-trigger" class="pledge-check-trigger">
+
+                    <form class="pledge-form" onsubmit="event.preventDefault(); document.getElementById('pledge-trigger').checked = true;">
+                        <div class="form-group">
+                            <label for="p-name">Nama Lengkap / Sekolah</label>
+                            <input type="text" id="p-name" class="form-input" placeholder="Contoh: Budi Santoso - SMAN 1" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="p-action">Fokus Aksi Utama</label>
+                            <select id="p-action" class="form-select" required>
+                                <option value="">-- Pilih Fokus Aksi --</option>
+                                <option>Pengurangan Sampah Plastik Sekali Pakai</option>
+                                <option>Kampanye & Edukasi Media Sosial</option>
+                                <option>Relawan Penanaman Mangrove</option>
+                                <option>Konservasi Terumbu Karang</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="p-msg">Pesan / Janji Pribadi</label>
+                            <textarea id="p-msg" class="form-textarea" rows="3" placeholder="Saya berjanji akan selalu membawa tumbler dan kantong belanja sendiri..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Kirim Komitmen Saya 🌊</button>
+                    </form>
+
+                    <!-- Pesan Sukses (Tampil tanpa JavaScript) -->
+                    <div class="pledge-success-msg">
+                        🎉 Terima kasih! Janji dan komitmenmu telah dicatat. Mari menjadi pahlawan pesisir bagi generasi mendatang!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--teal-primary)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.42 1.12 2.65 3.32 4.67 6.07 5.48.45 1.57 1.48 2.89 2.86 3.69-1.57 3.11-4.78 5.11-6.19 5.11z"/></svg>
+                        Jaga<span>Pesisir</span>
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.6; max-width: 320px;">
+                        Platform edukasi terbuka mendukung pencapaian Tujuan Pembangunan Berkelanjutan (SDG 13 & SDG 14) di Indonesia.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigasi Halaman</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="artikel.html">Artikel</a></li>
+                        <li><a href="edukasi.html">Edukasi</a></li>
+                        <li><a href="panduan.html">Panduan</a></li>
+                        <li><a href="kuis.html">Kuis Interaktif</a></li>
+                        <li><a href="aksi.html">Aksi Nyata</a></li>
+                        <li><a href="tentang.html">Tentang Kami</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Target SDG</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">
+                        <strong style="color: #ffffff;">SDG 13:</strong> Penanganan Perubahan Iklim melalui penyerapan karbon pesisir.
+                    </p>
+                    <p style="font-size: 0.9rem;">
+                        <strong style="color: #ffffff;">SDG 14:</strong> Ekosistem Lautan demi pencegahan pencemaran dan konservasi biota bahari.
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Jaga Pesisir — Edukasi Konservasi Laut & Pantai Indonesia.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

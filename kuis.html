@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Interaktif — Jaga Pesisir</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand-logo">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2z"/></svg>
+                Jaga <span>Pesisir</span>
+            </a>
+
+            <nav class="main-nav">
+                <a href="index.html" class="nav-btn">Beranda</a>
+                <a href="artikel.html" class="nav-btn">Artikel</a>
+                <a href="edukasi.html" class="nav-btn">Edukasi</a>
+                <a href="panduan.html" class="nav-btn">Panduan</a>
+                <a href="kuis.html" class="nav-btn active">Kuis</a>
+                <a href="aksi.html" class="nav-btn">Aksi</a>
+                <a href="tentang.html" class="nav-btn">Tentang</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- PURE CSS GAME STATE TOGGLES (SEMBUNYI) -->
+            <input type="checkbox" id="quiz-start-toggle" class="quiz-state-toggle">
+            <input type="checkbox" id="level-2-toggle" class="quiz-state-toggle">
+
+            <!-- SCREEN 1: KOTAK MULAI KUIS (AWAL) -->
+            <div class="quiz-start-screen">
+                <div class="hero-card" style="text-align: center; padding: 4rem 2rem;">
+                    <span class="sdg-badge sdg-14" style="margin-bottom: 1rem;">🎮 Misi Penjaga Laut</span>
+                    <h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Uji Pemahaman Konservasi Pesisir</h1>
+                    <p class="hero-desc" style="max-width: 600px; margin: 0 auto 2rem auto;">
+                        Siap menguji pengetahuanmu seputar pencemaran laut, sampah plastik, dan hutan mangrove? Selesaikan kuis bertingkat ini!
+                    </p>
+                    <label for="quiz-start-toggle" class="cta-btn" style="display: inline-flex; cursor: pointer;">
+                        Mulai Kuis Sekarang 🚀
+                    </label>
+                </div>
+            </div>
+
+            <!-- CONTAINER SELURUH LEVEL (SEMBUNYI SEBELUM TOMBOL START DITEKAN) -->
+            <div class="quiz-levels-container">
+                
+                <!-- LEVEL 1: PENCEMARAN & SAMPAH -->
+                <section class="quiz-level-step level-1">
+                    <span class="section-tag">Level 1</span>
+                    <h2 class="section-title">Pencemaran & Sampah Plastik</h2>
+                    <p class="section-subtitle">Jawab soal di bawah untuk membuka akses ke level berikutnya.</p>
+
+                    <!-- Soal 1 -->
+                    <div class="quiz-card">
+                        <h3>1. [Tuliskan Pertanyaan Soal 1 Di Sini]</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option-label">
+                                <input type="radio" name="q1" class="quiz-radio wrong">
+                                <span class="quiz-opt-btn">A. [Opsi Jawaban Salah]</span>
+                                <div class="quiz-feedback wrong-fb">❌ [Penjelasan mengapa jawaban kurang tepat]</div>
+                            </label>
+                            <label class="quiz-option-label">
+                                <input type="radio" name="q1" class="quiz-radio correct">
+                                <span class="quiz-opt-btn">B. [Opsi Jawaban Benar]</span>
+                                <div class="quiz-feedback correct-fb">✅ [Penjelasan fakta jawaban benar]</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Soal 2 -->
+                    <div class="quiz-card">
+                        <h3>2. [Tuliskan Pertanyaan Soal 2 Di Sini]</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option-label">
+                                <input type="radio" name="q2" class="quiz-radio correct">
+                                <span class="quiz-opt-btn">A. [Opsi Jawaban Benar]</span>
+                                <div class="quiz-feedback correct-fb">✅ [Penjelasan fakta jawaban benar]</div>
+                            </label>
+                            <label class="quiz-option-label">
+                                <input type="radio" name="q2" class="quiz-radio wrong">
+                                <span class="quiz-opt-btn">B. [Opsi Jawaban Salah]</span>
+                                <div class="quiz-feedback wrong-fb">❌ [Penjelasan mengapa jawaban kurang tepat]</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- KONFIRMASI LANJUT KE LEVEL 2 -->
+                    <div class="level-next-box">
+                        <p style="font-weight: 600; margin-bottom: 0.75rem;">Sudah selesai menjawab Level 1?</p>
+                        <label for="level-2-toggle" class="cta-btn" style="cursor: pointer;">
+                            Konfirmasi & Lanjut ke Level 2 ⏩
+                        </label>
+                    </div>
+                </section>
+
+                <!-- LEVEL 2: EKOSISTEM & MANGROVE -->
+                <section class="quiz-level-step level-2">
+                    <span class="section-tag">Level 2</span>
+                    <h2 class="section-title">Mangrove & Ekosistem Pesisir</h2>
+                    <p class="section-subtitle">Uji pemahamanmu mengenai peran vital mangrove dan terumbu karang.</p>
+
+                    <!-- Soal 3 -->
+                    <div class="quiz-card">
+                        <h3>3. [Tuliskan Pertanyaan Soal 3 Di Sini]</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option-label">
+                                <input type="radio" name="q3" class="quiz-radio wrong">
+                                <span class="quiz-opt-btn">A. [Opsi Jawaban Salah]</span>
+                                <div class="quiz-feedback wrong-fb">❌ [Penjelasan kesalahan]</div>
+                            </label>
+                            <label class="quiz-option-label">
+                                <input type="radio" name="q3" class="quiz-radio correct">
+                                <span class="quiz-opt-btn">B. [Opsi Jawaban Benar]</span>
+                                <div class="quiz-feedback correct-fb">✅ [Penjelasan jawaban benar]</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Soal 4 -->
+                    <div class="quiz-card">
+                        <h3>4. [Tuliskan Pertanyaan Soal 4 Di Sini]</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option-label">
+                                <input type="radio" name="q4" class="quiz-radio correct">
+                                <span class="quiz-opt-btn">A. [Opsi Jawaban Benar]</span>
+                                <div class="quiz-feedback correct-fb">✅ [Penjelasan jawaban benar]</div>
+                            </label>
+                            <label class="quiz-option-label">
+                                <input type="radio" name="q4" class="quiz-radio wrong">
+                                <span class="quiz-opt-btn">B. [Opsi Jawaban Salah]</span>
+                                <div class="quiz-feedback wrong-fb">❌ [Penjelasan kesalahan]</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- SELESAI SELURUH KUIS -->
+                    <div class="quiz-finish-box">
+                        <h3>🎉 Selamat! Kamu Berhasil Menyelesaikan Semua Level!</h3>
+                        <p style="color: var(--text-muted); margin: 0.5rem 0 1.5rem 0;">
+                            Kamu telah siap mengambil peran nyata dalam menjaga kelestarian laut.
+                        </p>
+                        <a href="aksi.html" class="cta-btn">
+                            Lanjut ke Misi Aksi Nyata 🌊
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--teal-primary)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.42 1.12 2.65 3.32 4.67 6.07 5.48.45 1.57 1.48 2.89 2.86 3.69-1.57 3.11-4.78 5.11-6.19 5.11z"/></svg>
+                        Jaga<span>Pesisir</span>
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.6; max-width: 320px;">
+                        Platform edukasi terbuka mendukung pencapaian Tujuan Pembangunan Berkelanjutan (SDG 13 & SDG 14) di Indonesia.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigasi Halaman</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="artikel.html">Artikel</a></li>
+                        <li><a href="edukasi.html">Edukasi</a></li>
+                        <li><a href="panduan.html">Panduan</a></li>
+                        <li><a href="kuis.html">Kuis Interaktif</a></li>
+                        <li><a href="aksi.html">Aksi Nyata</a></li>
+                        <li><a href="tentang.html">Tentang Kami</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Target SDG</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">
+                        <strong style="color: #ffffff;">SDG 13:</strong> Penanganan Perubahan Iklim melalui penyerapan karbon pesisir.
+                    </p>
+                    <p style="font-size: 0.9rem;">
+                        <strong style="color: #ffffff;">SDG 14:</strong> Ekosistem Lautan demi pencegahan pencemaran dan konservasi biota bahari.
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Jaga Pesisir — Edukasi Konservasi Laut & Pantai Indonesia.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

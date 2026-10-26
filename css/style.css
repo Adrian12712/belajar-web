@@ -1,0 +1,1219 @@
+/* ==========================================================================
+   1. CSS VARIABLES & BASE STYLES
+   ========================================================================== */
+:root {
+    --navy-dark: #0f2b46;
+    --navy-main: #173e63;
+    --teal-primary: #00a896;
+    --teal-dark: #028090;
+    --teal-light: #e0f2f1;
+    --sand-gold: #f4a261;
+    --coral-red: #e76f51;
+    --bg-soft: #f4f7f6;
+    --card-white: #ffffff;
+    --text-dark: #1d2d44;
+    --text-muted: #5c6b73;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 2px 8px rgba(15, 43, 70, 0.06);
+    --shadow-md: 0 8px 24px rgba(15, 43, 70, 0.1);
+    --shadow-lg: 0 16px 32px rgba(15, 43, 70, 0.15);
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-soft);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container Limit */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4 {
+    color: var(--navy-dark);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.section-tag {
+    display: inline-block;
+    background: var(--teal-light);
+    color: var(--teal-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 700px;
+    margin-bottom: 2.5rem;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION BAR (MULTI-PAGE SETUP)
+   ========================================================================== */
+.site-header {
+    background-color: rgba(15, 43, 70, 0.96);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.35rem;
+    letter-spacing: -0.5px;
+}
+
+.brand-logo svg {
+    width: 32px;
+    height: 32px;
+    fill: var(--teal-primary);
+}
+
+.brand-logo span {
+    color: var(--sand-gold);
+}
+
+/* Main Navigation Links */
+.main-nav {
+    display: flex;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 6px;
+    border-radius: 50px;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    color: #d0dbe5;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: var(--transition);
+    white-space: nowrap;
+    user-select: none;
+}
+
+.nav-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.nav-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* Status Menu Aktif untuk Multi-Page Navigation */
+.nav-btn.active {
+    background-color: var(--teal-primary);
+    color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 168, 150, 0.4);
+}
+
+/* Page Content Layout */
+main {
+    flex: 1;
+    padding: 2.5rem 0 4rem;
+}
+
+.page-tab {
+    display: block;
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   3. BERANDA (HOME) & HERO COMPONENTS
+   ========================================================================== */
+.hero-card {
+            background:
+            linear-gradient(135deg, rgba(15, 43, 70, 0.88) 0%, rgba(2, 128, 144, 0.6) 100%),
+            url("Beranda-Laut-Kotor.jpg") center / cover no-repeat;
+            border-radius: var(--radius-lg);
+            padding: 4rem 2.5rem;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 3rem;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0,168,150,0.25) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .sdg-badges {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .sdg-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #ffffff;
+        }
+
+        .sdg-13 { background-color: #3f7e44; }
+        .sdg-14 { background-color: #0a97d9; }
+
+        .hero-title {
+            font-size: 2.8rem;
+            color: #ffffff;
+            margin-bottom: 1.25rem;
+            line-height: 1.15;
+        }
+
+        .hero-title span {
+            color: var(--sand-gold);
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            color: #e2e8f0;
+            margin-bottom: 2rem;
+            max-width: 650px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--sand-gold);
+            color: var(--navy-dark);
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 12px 28px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            box-shadow: 0 4px 15px rgba(244, 162, 97, 0.4);
+        }
+
+        .cta-btn:hover {
+            background: #f4b27a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(244, 162, 97, 0.5);
+        }
+
+        /* Statistics Cards Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .stat-card {
+            background: var(--card-white);
+            padding: 1.75rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--teal-primary);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--teal-primary);
+        }
+
+        .stat-number {
+            font-size: 2.3rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-number span {
+            color: var(--coral-red);
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+/* Overview Info Cards */
+.info-cards-2col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.info-box {
+    background: var(--card-white);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.info-box-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 1rem;
+}
+
+.info-box-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--teal-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-box-icon svg {
+    width: 26px;
+    height: 26px;
+    fill: var(--teal-dark);
+}
+
+.stat-link {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+        }
+ 
+        .stat-link:focus-visible {
+            outline: 3px solid var(--sand-gold);
+            outline-offset: 3px;
+        }
+ 
+        .stat-sumber {
+            font-size: 0.8rem;
+            color: var(--teal-dark);
+            font-weight: 700;
+            margin-top: 0.75rem;
+        }
+ 
+        .stat-link:hover .stat-sumber {
+            text-decoration: underline;
+        }
+ 
+        /* 6 kolom: 3 kartu atas (span 2), 2 kartu bawah (span 3) */
+        .stats-grid.stats-grid-5 { grid-template-columns: repeat(6, 1fr); }
+        .stats-grid-5 .stat-card { grid-column: span 2; }
+        .stats-grid-5 .stat-card:nth-child(n+4) { grid-column: span 3; }
+ 
+        @media (max-width: 900px) {
+            .stats-grid.stats-grid-5 { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid-5 .stat-card,
+            .stats-grid-5 .stat-card:nth-child(n+4) { grid-column: span 1; }
+            .stats-grid-5 .stat-card:last-child { grid-column: span 2; }
+        }
+ 
+        @media (max-width: 600px) {
+            .stats-grid.stats-grid-5 { grid-template-columns: 1fr; }
+            .stats-grid-5 .stat-card:last-child { grid-column: span 1; }
+        }
+ 
+        /* [BARU] VIDEO PENYADARAN (akhir Beranda) */
+        .video-showcase-section {
+            margin-top: 3.5rem;
+        }
+ 
+        .section-tag.tag-video {
+            background: rgba(0, 168, 150, 0.15);
+            color: var(--teal-dark);
+        }
+ 
+        .video-wrapper-card {
+            background: var(--navy-dark);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+ 
+        /* aspect-ratio 16/9 menjaga bentuk video di semua ukuran layar */
+        .video-responsive-box {
+            aspect-ratio: 16 / 9;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: #000;
+        }
+ 
+        .video-responsive-box iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+ 
+        .video-caption-bar {
+            margin-top: 1.25rem;
+            padding: 0.25rem 0.5rem 0;
+        }
+ 
+        .video-caption-text {
+            color: #cbd5e0;
+            font-size: 0.95rem;
+        }
+ 
+        .video-caption-text strong {
+            color: var(--sand-gold);
+        }
+ 
+        @media (max-width: 768px) {
+            .video-wrapper-card { padding: 1rem; }
+        }
+
+        /* ==========================================================================
+           4. TAB 2: PENCEMARAN & SAMPAH PLASTIK
+           ========================================================================== */
+        .pollution-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .source-card {
+            background: var(--card-white);
+            border-radius: var(--radius-md);
+            padding: 1.75rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .source-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            background: linear-gradient(to bottom, #ffffff, #f0fdfa);
+            border-color: var(--teal-primary);
+        }
+
+        .source-card-badge {
+            display: inline-block;
+            background: #fee2e2;
+            color: #991b1b;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .source-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Decomposition Timeline Infographic */
+        .decomposition-box {
+            background: var(--card-white);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .decomp-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .decomp-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .decomp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .decomp-time {
+            color: var(--coral-red);
+            font-weight: 700;
+            background: #fff5f5;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .decomp-bar-bg {
+            height: 14px;
+            background: #edf2f7;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .decomp-bar-fill {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--teal-primary), var(--coral-red));
+            transition: width 1s ease-in-out;
+        }
+
+        .case-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    display: block;
+        }   
+
+.photo-credit {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+/* ==========================================================================
+   5. EKOSISTEM & KEANEKARAGAMAN HAYATI
+   ========================================================================== */
+.bastions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.bastion-card {
+    background: var(--card-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.bastion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.bastion-header-bg {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.bastion-1 { background: linear-gradient(135deg, #028090, #00a896); }
+.bastion-2 { background: linear-gradient(135deg, #173e63, #2a6f97); }
+.bastion-3 { background: linear-gradient(135deg, #2c5d63, #283618); }
+
+.bastion-body {
+    padding: 1.75rem;
+}
+
+.bastion-body h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Species Gallery Grid */
+.species-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.species-card {
+    background: var(--card-white);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+}
+
+.status-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.species-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--bg-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.species-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--navy-dark);
+}
+
+/* ==========================================================================
+   6. REHABILITASI MANGROVE
+   ========================================================================== */
+.blue-carbon-box {
+    background: linear-gradient(135deg, #0f2b46 0%, #1e4d6b 100%);
+    color: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-md);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: center;
+}
+
+.blue-carbon-box h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.highlight-badge {
+    background: rgba(0, 168, 150, 0.25);
+    border: 1px solid var(--teal-primary);
+    color: #80e9dd;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Step Timeline */
+.timeline-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.step-card {
+    background: var(--card-white);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.step-number {
+    width: 36px;
+    height: 36px;
+    background: var(--teal-primary);
+    color: #ffffff;
+    font-weight: 800;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+/* Zonation Map Box */
+.zonation-box {
+    background: var(--card-white);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.zone-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.zone-item {
+    background: var(--bg-soft);
+    padding: 1.25rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--teal-dark);
+}
+
+.action-guide-hero {
+            background: 
+                linear-gradient(135deg, rgba(15, 43, 70, 0.65) 0%, rgba(2, 128, 144, 0.45) 100%),
+                url("Mangrove.jpg") center / cover no-repeat;
+            color: #ffffff;
+            padding: 3.5rem 2rem;
+            border-radius: var(--radius-lg);
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .action-guide-hero h2 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .action-guide-hero p {
+            color: #e2e8f0;
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* Grid 3 Kolom */
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .level-card {
+            background: var(--card-white);
+            border-radius: var(--radius-md);
+            overflow: hidden; /* Agar gambar mengikuti sudut membulat kartu */
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .level-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--teal-primary);
+        }
+
+        /* [BARU] CSS Gambar Kartu */
+        .level-card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .level-card-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .level-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+            align-self: flex-start;
+        }
+
+        .badge-pemula { background: #e0f2f1; color: var(--teal-dark); }
+        .badge-menengah { background: #fef3c7; color: #b45309; }
+        .badge-pejuang { background: #fee2e2; color: #991b1b; }
+
+        .level-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--navy-dark);
+        }
+
+        .level-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+
+        /* Kotak Sumber Klaim Dampak */
+        .source-tag-box {
+            background: var(--bg-soft);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            border-left: 3px solid var(--teal-primary);
+            margin-top: auto;
+        }
+
+        .source-tag-box strong {
+            color: var(--teal-dark);
+        }
+
+        /* Tombol Penutup ke Aksi & Kuis */
+        .guide-footer-cta {
+            text-align: center;
+            background: var(--card-white);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .guide-footer-cta {
+            width: 100%; /* Memastikan lebar penuh 100% */
+            text-align: center;
+            background: var(--card-white);
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            margin-top: 2rem; /* Memberi jarak dari kartu-kartu di atasnya */
+            grid-column: 1 / -1; /* Jaga-jaga jika masih berada di dalam elemen grid */
+        }
+
+/* ==========================================================================
+   7. AKSI & EDUKASI (CHECKLIST, FORM KOMITMEN)
+   ========================================================================== */
+.action-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+@media (min-width: 992px) {
+    .action-layout {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.action-card-box {
+    background: var(--card-white);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Interactive CSS Checklist */
+.checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 1.25rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.checklist-item:hover {
+    background: var(--bg-soft);
+}
+
+.checklist-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--teal-primary);
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+.checklist-item input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Form Styling */
+.pledge-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-input, .form-select, .form-textarea {
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    background: #ffffff;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+    outline: none;
+    border-color: var(--teal-primary);
+    box-shadow: 0 0 0 3px rgba(0, 168, 150, 0.15);
+}
+
+.submit-btn {
+    background: var(--teal-primary);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.submit-btn:hover {
+    background: var(--teal-dark);
+}
+
+/* Pure CSS Pledge Success Trigger */
+.pledge-check-trigger {
+    display: none;
+}
+
+.pledge-check-trigger:checked ~ .pledge-success-msg {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+.pledge-success-msg {
+    display: none;
+    background: #d1fae5;
+    color: #065f46;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #10b981;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   8. KUIS INTERAKTIF BERTINGKAT (PURE CSS GAME ENGINE)
+   ========================================================================== */
+.quiz-state-toggle {
+    display: none;
+}
+
+/* Sembunyikan Soal & Level 2 di Awal */
+.quiz-levels-container,
+.quiz-level-step.level-2 {
+    display: none;
+}
+
+.quiz-start-screen {
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* 1. Klik Start: Sembunyikan Start Screen & Tampilkan Soal */
+#quiz-start-toggle:checked ~ .quiz-start-screen {
+    display: none;
+}
+
+#quiz-start-toggle:checked ~ .quiz-levels-container {
+    display: block;
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* 2. Klik Konfirmasi Level 2: Sembunyikan Tombol Lanjut, Tampilkan Level 2 */
+#level-2-toggle:checked ~ .quiz-levels-container .level-next-box {
+    display: none;
+}
+
+#level-2-toggle:checked ~ .quiz-levels-container .quiz-level-step.level-2 {
+    display: block;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px dashed var(--border-color);
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Quiz Card & Options Layout */
+.quiz-card {
+    background: var(--card-white);
+    padding: 1.75rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.quiz-card h3 {
+    margin-bottom: 1rem;
+    color: var(--navy-dark);
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.quiz-option-label {
+    display: block;
+    cursor: pointer;
+}
+
+.quiz-radio {
+    display: none;
+}
+
+.quiz-opt-btn {
+    display: block;
+    padding: 0.85rem 1.25rem;
+    background: var(--bg-soft);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-weight: 500;
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+.quiz-option-label:hover .quiz-opt-btn {
+    border-color: var(--teal-primary);
+    background-color: rgba(0, 168, 150, 0.05);
+}
+
+/* Opsi Dipilih */
+.quiz-radio:checked + .quiz-opt-btn {
+    border-color: var(--teal-primary);
+    background-color: rgba(0, 168, 150, 0.12);
+    font-weight: 600;
+}
+
+/* Feedback/Penjelasan Jawaban */
+.quiz-feedback {
+    display: none;
+    padding: 0.75rem 1rem;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.quiz-feedback.correct-fb {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+    border: 1px solid #c8e6c9;
+}
+
+.quiz-feedback.wrong-fb {
+    background-color: #ffebee;
+    color: #b71c1c;
+    border: 1px solid #ffcdd2;
+}
+
+/* Tampilkan Feedback Saat Radio Dicentang */
+.quiz-radio:checked ~ .quiz-feedback {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Box Konfirmasi Level & Finish */
+.level-next-box,
+.quiz-finish-box {
+    text-align: center;
+    background: var(--card-white);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    margin-top: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+.site-footer {
+    background: var(--navy-dark);
+    color: #a0aec0;
+    padding: 3.5rem 0 2rem;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.footer-brand {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-brand span {
+    color: var(--sand-gold);
+}
+
+.footer-col h4 {
+    color: #ffffff;
+    font-size: 1.05rem;
+    margin-bottom: 1.25rem;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: #a0aec0;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--teal-primary);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   10. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        height: auto;
+        padding: 12px 0;
+        gap: 12px;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-card {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+}
