@@ -302,12 +302,3 @@ jaga-pesisir/
 | IPB University | Laut Indonesia Kian Tercemar, Pakar IPB University Kurangi Plastik | 2026 | https://www.ipb.ac.id/news/index/2026/07/laut-indonesia-kian-tercemar-pakar-ipb-university-kurangi-plastik-perkuat-kolaborasi-selamatkan-ekosistem/ |
 | WWF Indonesia | Diplomasi Biru Indonesia di Konferensi Laut Dunia UNOC3 | 2025 | https://www.wwf.id/id/blog/diplomasi-biru-indonesia-di-konferensi-laut-dunia-unoc3-upaya-global-bagi-terumbu-karang |
 | Mongabay Indonesia | Sembilan Tahun Peringati Hari Terumbu Karang Dunia, Bagaimana Kondisi di Indonesia? | 2018 | https://mongabay.co.id/2018/05/09/sembilan-tahun-peringati-hari-terumbu-karang-dunia-bagaimana-kondisi-di-indonesia/ |
-
-### Aset
-
-| Jenis | Keterangan | Sumber | Lisensi |
-|-------|-----------|--------|---------|
-| Font | Plus Jakarta Sans | Google Fonts | SIL Open Font License |
-| Ikon | Ikon SVG | Material Design / buatan sendiri | Open source |
-| Foto hero | `hero-pesisir.jpg` — ISI NAMA FOTO | ISI NAMA FOTOGRAFER dan SITUS (Unsplash/Pexels) | ISI LISENSI |
-| Video | Keindahan yang Rentan: Mengapa Laut Butuh Kita | YouTube (ID `YH3-ks7SAMU`) | Disematkan lewat fitur embed resmi YouTube |
