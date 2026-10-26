@@ -189,7 +189,7 @@ main {
 .hero-card {
             background:
             linear-gradient(135deg, rgba(15, 43, 70, 0.88) 0%, rgba(2, 128, 144, 0.6) 100%),
-            url("Beranda-Laut-Kotor.jpg") center / cover no-repeat;
+            url("../img/Beranda-Laut-Kotor.jpg") center / cover no-repeat;
             border-radius: var(--radius-lg);
             padding: 4rem 2.5rem;
             color: #ffffff;
@@ -741,7 +741,7 @@ main {
 .action-guide-hero {
             background: 
                 linear-gradient(135deg, rgba(15, 43, 70, 0.65) 0%, rgba(2, 128, 144, 0.45) 100%),
-                url("Mangrove.jpg") center / cover no-repeat;
+                url("../img/Mangrove.jpg") center / cover no-repeat;
             color: #ffffff;
             padding: 3.5rem 2rem;
             border-radius: var(--radius-lg);
